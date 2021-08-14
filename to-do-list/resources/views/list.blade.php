@@ -25,22 +25,22 @@
             </div>
 
             <input type="radio" class="btn-check" name="color" value="danger" id="option1" autocomplete="off" required>
-            <label class="btn btn-danger" for="option1">Red</label>
+            <label class="btn btn-danger m-1" for="option1">Red</label>
             
             <input type="radio" class="btn-check" name="color" value="primary" id="option2" autocomplete="off">
-            <label class="btn btn-primary" for="option2">Blue</label>
+            <label class="btn btn-primary m-1" for="option2">Blue</label>
             
             <input type="radio" class="btn-check" name="color" value="warning" id="option3" autocomplete="off">
-            <label class="btn btn-warning" for="option3">Yellow</label>
+            <label class="btn btn-warning m-1" for="option3">Yellow</label>
 
             <input type="radio" class="btn-check" name="color" value="success" id="option4" autocomplete="off">
-            <label class="btn btn-success" for="option4">Green</label>
+            <label class="btn btn-success m-1" for="option4">Green</label>
 
             <input type="radio" class="btn-check" name="color" value="secondary" id="option5" autocomplete="off">
-            <label class="btn btn-secondary" for="option5">Grey</label>
+            <label class="btn btn-secondary m-1" for="option5">Grey</label>
 
             <input type="radio" class="btn-check" name="color" value="info" id="option6" autocomplete="off">
-            <label class="btn btn-info" for="option6">Cobalt</label>
+            <label class="btn btn-info m-1" for="option6">Cobalt</label>
 
             <br/>
             <br/>
@@ -52,8 +52,11 @@
           <h2>To do's:</h2>
           <br/>
           @foreach ($todos as $todo)
+            <input type="hidden" id="custId" name="custId" value="{{ $todo->id }}">
           <div class="alert alert-{{ $todo->color }}" role="alert">
-            {{ $todo->content }}
+          {{ $todo->content }}
+          <a href="{{ url('delete/'.$todo->id) }}"><button type="button" class="btn btn-outline-danger float-end btn-sm"> Delete</button></a>
+
           </div>
                   
 

@@ -21,4 +21,14 @@ class TodoController extends Controller
 
 
     }
+
+    public function delete($id){
+
+        $cus = new Todo();
+        $data = $cus->find($id);
+        $data->delete();
+        
+        return redirect('/');
+
+    }
 }
